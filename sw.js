@@ -2,10 +2,10 @@ const STATIC_CACHE = 'static-cache-v1';
 const DYNAMIC_CACHE = 'dynamic-cache';
 
 const APP_SHELL = [
-  'index.html',
-  'calendar.html',
-  'form.html',
-  'main.js',
+  './index.html',
+  './calendar.html',
+  './form.html',
+  './main.js',
 ];
 
 // ---- INSTALACIÓN ----
@@ -69,3 +69,4 @@ self.addEventListener('fetch', e => {
     })
   );
 });
+
