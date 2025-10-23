@@ -2,37 +2,100 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 👈 Importante para móviles -->
   <title>Formulario</title>
-    <link rel="manifest" href="manifest.json">
 
-  <!-- Select2 -->
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+  <!-- 📱 Manifest para PWA -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- 🎨 Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- 🎯 Select2 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Estilos opcionales para integración Select2 + Bootstrap -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    h1 {
+      color: #0d6efd;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: #0d6efd;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Formulario con Select</h1>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="calendar.html">Calendario</a>
-  </nav>
+  <div class="container text-center">
+    <h1>Formulario con Select</h1>
 
-  <form>
+    <nav class="mb-4">
+      <a href="index.html">🏠 Home</a> |
+      <a href="calendar.html">📅 Calendario</a>
+    </nav>
 
+    <div class="form-container">
+      <form>
+        <div class="mb-3 text-start">
+          <label for="miSelect" class="form-label fw-bold">Selecciona una opción:</label>
+          <select id="miSelect" class="form-select w-100">
+            <option value="1">Opción 1</option>
+            <option value="2">Opción 2</option>
+            <option value="3">Opción 3</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
 
-    <label>Selecciona una opción:</label><br>
-    
-    <select id="miSelect" style="width:200px;">
-      <option value="1">Opción 1</option>
-      <option value="2">Opción 2</option>
-      <option value="3">Opción 3</option>
-    </select>
-  </form>
-
-  <!-- Select2 JS -->
+  <!-- 🧠 jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- ⚙️ Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 🔽 Select2 JS -->
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
   <script>
     $(document).ready(function() {
-      $('#miSelect').select2();
+      $('#miSelect').select2({
+        width: '100%' // 👈 Hace que el select se adapte al contenedor Bootstrap
+      });
     });
   </script>
 </body>
