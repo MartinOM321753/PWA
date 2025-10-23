@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Mi PWA de Gestión de Tareas</title>
+
+  <!-- 📱 Manifest general (Android, Chrome, Edge, etc.) -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- 🎨 Colores del navegador -->
+  <meta name="theme-color" content="#4A90E2" />
+  <meta name="background-color" content="#1A202C" />
+
+  <!-- 🍎 Configuración especial para iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Gestor PWA" />
+
+  <!-- Iconos iOS -->
+  <link rel="apple-touch-icon" href="images/icons/apple-icon-180x180.png" sizes="180x180">
+  <link rel="apple-touch-icon-precomposed" href="images/icons/icon-ios-precomposed.png">
+
+  <!-- 🖼️ Favicon (opcional para desktop) -->
+  <link rel="icon" href="images/192.png" type="image/png">
+</head>
+
+<body>
+  <h1>Bienvenido a tu Gestor PWA</h1>
+  <nav>
+    <a href="calendar.html">Calendario</a>
+    <a href="form.html">Formulario</a>
+  </nav>
+
+  <script src="main.js"></script>
+  <script>
+    // 🔧 Registro del Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('✅ Service Worker registrado correctamente'))
+          .catch(err => console.error('❌ Error al registrar SW:', err));
+      });
+    }
+  </script>
+</body>
+</html>

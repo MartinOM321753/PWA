@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+    <link rel="manifest" href="manifest.json">
+
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Formulario con Select</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="calendar.html">Calendario</a>
+  </nav>
+
+  <form>
+
+
+    <label>Selecciona una opción:</label><br>
+    
+    <select id="miSelect" style="width:200px;">
+      <option value="1">Opción 1</option>
+      <option value="2">Opción 2</option>
+      <option value="3">Opción 3</option>
+    </select>
+  </form>
+
+  <!-- Select2 JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#miSelect').select2();
+    });
+  </script>
+</body>
+</html>
